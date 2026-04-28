@@ -1,0 +1,95 @@
+.clickZone {
+  width: 260px;
+  flex-shrink: 0;
+  background: var(--panel);
+  border-right: 2px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 14px;
+  gap: 12px;
+  overflow-y: auto;
+}
+
+.sockCount { text-align: center; }
+.value { font-size: 1.8rem; font-weight: bold; color: var(--accent2); }
+.label { font-size: 0.78rem; color: var(--muted); }
+.sps { font-size: 0.95rem; color: var(--green); margin-top: 2px; }
+
+.clickBtn {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 4px solid var(--accent);
+  background: var(--card);
+  font-size: 68px;
+  cursor: pointer;
+  transition: transform 0.08s, box-shadow 0.08s;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(233,69,96,0.3);
+  flex-shrink: 0;
+}
+.clickBtn:hover { box-shadow: 0 0 32px rgba(233,69,96,0.6); }
+.clickBtn:active { transform: scale(0.93); }
+
+.clickPower { font-size: 0.82rem; color: var(--muted); text-align: center; }
+.luckyLabel { font-size: 0.7rem; color: var(--muted); text-align: center; }
+
+.comboDisplay {
+  font-size: 0.88rem;
+  font-weight: bold;
+  text-align: center;
+  min-height: 1.2em;
+  transition: all 0.2s;
+  letter-spacing: 0.5px;
+}
+.comboX2 { color: #7ecfff; }
+.comboX3 { color: var(--accent2); }
+.comboX4 { color: #ff6b6b; }
+.comboMax { color: #ff0; animation: comboPulse 0.4s infinite alternate; }
+
+.milestones { width: 100%; font-size: 0.78rem; }
+.milestones h3 { color: var(--muted); margin-bottom: 6px; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; }
+
+.milestone {
+  background: var(--card);
+  border-radius: 6px;
+  padding: 5px 8px;
+  margin-bottom: 3px;
+  color: var(--muted);
+  transition: color 0.3s, background 0.3s;
+}
+.milestone.unlocked {
+  color: var(--accent2);
+  background: rgba(245,166,35,0.1);
+}
+
+.rushBtn {
+  width: 100%;
+  padding: 8px 6px;
+  background: linear-gradient(135deg, #1a2e50, #0f3460);
+  border: 2px solid var(--accent2);
+  border-radius: 8px;
+  color: var(--accent2);
+  font-size: 0.82rem;
+  font-weight: bold;
+  cursor: pointer;
+  animation: rushBtnPulse 2s infinite;
+  margin-bottom: 0;
+}
+
+.prestigeBtn {
+  width: 100%;
+  padding: 9px;
+  background: linear-gradient(135deg, #9b27af, #e91e63);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: bold;
+  cursor: pointer;
+  animation: glowPulse 2s infinite;
+}

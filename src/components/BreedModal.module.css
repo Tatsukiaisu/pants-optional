@@ -1,0 +1,78 @@
+.overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.75);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 100; backdrop-filter: blur(4px);
+}
+.modal {
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: 12px; padding: 24px 28px;
+  max-width: 500px; width: 90%; max-height: 90vh; overflow-y: auto;
+  position: relative;
+}
+.modal h2 { margin: 0 0 4px; font-size: 1.25rem; color: var(--accent2); }
+.closeBtn {
+  position: absolute; top: 12px; right: 14px;
+  background: none; border: none; color: var(--muted);
+  font-size: 1.1rem; cursor: pointer; padding: 2px 6px;
+}
+.closeBtn:hover { color: var(--text); }
+.subtitle { color: var(--muted); font-size: 0.82rem; margin-bottom: 16px; }
+.parents {
+  display: flex; align-items: center; justify-content: center;
+  gap: 14px; margin-bottom: 16px;
+}
+.slot {
+  flex: 1; border: 2px dashed var(--border); border-radius: 10px;
+  padding: 16px 8px; text-align: center; cursor: pointer;
+  transition: border-color .2s, background .2s; min-height: 90px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+.slot:hover { border-color: var(--accent2); background: rgba(255,255,255,0.03); }
+.slot.filled { border-style: solid; border-color: var(--accent2); }
+.slotIcon { font-size: 2.2rem; line-height: 1; }
+.slotName { font-size: 0.75rem; color: var(--muted); margin-top: 4px; }
+.slotEmpty { font-size: 0.8rem; color: var(--muted); }
+.plus { font-size: 1.6rem; color: var(--accent2); font-weight: bold; flex-shrink: 0; }
+.result {
+  border: 1px solid var(--border); border-radius: 8px;
+  padding: 14px; text-align: center; margin-bottom: 14px;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+}
+.resultIcon { font-size: 2rem; }
+.resultLabel { font-size: 0.82rem; color: var(--accent2); }
+.cost { text-align: center; margin-bottom: 14px; font-size: 0.9rem; }
+.actions { display: flex; gap: 10px; justify-content: center; margin-top: 8px; }
+.btn {
+  padding: 8px 22px; border-radius: 8px; border: none;
+  font-size: 0.88rem; cursor: pointer; font-weight: 600; transition: opacity .15s;
+}
+.btn:disabled { opacity: .45; cursor: not-allowed; }
+.primary { background: var(--accent2); color: #000; }
+.secondary { background: var(--card); color: var(--text); border: 1px solid var(--border); }
+.genealogy { margin-top: 20px; border-top: 1px solid var(--border); padding-top: 14px; }
+.genealogyTitle { font-size: 0.85rem; color: var(--muted); margin-bottom: 10px; }
+.genealogyGrid { display: flex; flex-wrap: wrap; gap: 8px; }
+.genealogyCard {
+  background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+  padding: 8px 12px; text-align: center; font-size: 1.1rem; position: relative; min-width: 58px;
+}
+.babyTag {
+  position: absolute; top: -6px; right: -6px;
+  background: var(--accent2); border-radius: 50%;
+  font-size: 0.6rem; padding: 1px 3px; color: #000;
+}
+.genealogyName { font-size: 0.68rem; color: var(--muted); margin-top: 3px; }
+.pickerOverlay {
+  position: absolute; inset: 0; background: var(--panel);
+  border-radius: 12px; padding: 20px; overflow-y: auto; z-index: 10;
+}
+.pickerTitle { font-size: 1rem; font-weight: 700; margin-bottom: 12px; text-align: center; }
+.pickerGrid { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.pickerCard {
+  background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+  padding: 8px 10px; text-align: center; cursor: pointer;
+  font-size: 1.3rem; min-width: 58px; transition: border-color .15s;
+}
+.pickerCard:hover { border-color: var(--accent2); }
+.pickerCard.alreadySelected { opacity: 0.4; cursor: not-allowed; }
+.pickerName { font-size: 0.66rem; color: var(--muted); margin-top: 3px; }

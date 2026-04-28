@@ -1,0 +1,91 @@
+/* DexModal — matches TSX class names exactly */
+.overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.78);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 3000;
+}
+.modal {
+  background: var(--panel); border: 2px solid var(--border);
+  border-radius: 16px; padding: 20px 24px 18px;
+  width: 640px; max-height: 82vh; overflow-y: auto;
+  position: relative;
+}
+.modal h2 {
+  color: var(--accent2); font-size: 1.05rem; margin-bottom: 4px;
+  padding-right: 28px;
+}
+.closeBtn {
+  position: absolute; top: 14px; right: 16px;
+  background: none; border: none; color: var(--muted);
+  font-size: 1.1rem; cursor: pointer; line-height: 1;
+}
+.closeBtn:hover { color: var(--text); }
+
+.subtitle { font-size: 0.72rem; color: var(--muted); margin-bottom: 16px; }
+.subtitle span { color: var(--text); font-weight: bold; }
+
+.sectionTitle {
+  font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px;
+  color: var(--muted); margin: 14px 0 8px; padding-bottom: 4px;
+  border-bottom: 1px solid var(--border);
+}
+
+.grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 8px; margin-bottom: 6px;
+}
+
+.card {
+  background: var(--card); border: 2px solid var(--border);
+  border-radius: 10px; padding: 10px 8px; text-align: center;
+  position: relative; transition: border-color 0.2s, box-shadow 0.2s;
+  cursor: default;
+}
+.card.caught { cursor: pointer; }
+.card.caught:hover { box-shadow: 0 0 12px rgba(245,166,35,0.3); }
+.card.locked .icon { filter: grayscale(1) brightness(0.3); }
+.card.locked .name { color: var(--muted); }
+
+/* Rarity border colors for caught cards */
+.card.caught.rarity_common   { border-color: #546e7a; }
+.card.caught.rarity_uncommon { border-color: #2e7d32; }
+.card.caught.rarity_rare     { border-color: #1565c0; }
+.card.caught.rarity_epic     { border-color: #6a1b9a; }
+.card.caught.rarity_legendary { border-color: #f57f17; box-shadow: 0 0 14px rgba(245,127,23,0.4); }
+.card.caught.rarity_mythic   { border-color: #ff0080; box-shadow: 0 0 18px rgba(255,0,128,0.5); animation: mythicGlow 2s infinite alternate; }
+
+.icon { font-size: 1.9rem; line-height: 1; margin-bottom: 4px; }
+.name { font-size: 0.68rem; font-weight: bold; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.rarityLabel { font-size: 0.58rem; font-weight: bold; letter-spacing: 0.5px; margin-top: 2px; text-transform: uppercase; }
+
+.rarity_common .rarityLabel   { color: #78909c; }
+.rarity_uncommon .rarityLabel { color: #66bb6a; }
+.rarity_rare .rarityLabel     { color: #42a5f5; }
+.rarity_epic .rarityLabel     { color: #ab47bc; }
+.rarity_legendary .rarityLabel { color: #ffa726; }
+.rarity_mythic .rarityLabel   { color: #ff4db8; }
+
+.newTag {
+  position: absolute; top: -6px; right: -6px;
+  background: var(--accent); color: white;
+  font-size: 0.55rem; font-weight: bold; padding: 1px 4px; border-radius: 3px;
+}
+.babyTag {
+  position: absolute; top: -6px; left: -6px;
+  background: #7b1fa2; color: #fff; border-radius: 50%;
+  font-size: 0.58rem; padding: 1px 3px;
+}
+
+/* Tooltip shown on hover */
+.tooltip {
+  display: none;
+  position: absolute; bottom: calc(100% + 8px); left: 50%;
+  transform: translateX(-50%);
+  background: #0a1929; border: 1px solid var(--border); border-radius: 8px;
+  padding: 8px 10px; width: 170px; text-align: left;
+  z-index: 100; pointer-events: none;
+}
+.card.caught:hover .tooltip { display: block; }
+.tooltipName { font-size: 0.78rem; font-weight: bold; color: var(--accent2); margin-bottom: 3px; }
+.tooltipLore { font-size: 0.7rem; color: var(--muted); line-height: 1.4; }
+.tooltipParents { font-size: 0.68rem; color: var(--green); margin-top: 4px; }

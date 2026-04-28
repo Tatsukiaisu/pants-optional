@@ -1,0 +1,36 @@
+/* ChangelogModal — matches TSX class names exactly */
+.overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.78);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 3000;
+}
+.modal {
+  background: var(--panel); border: 2px solid var(--border);
+  border-radius: 14px; padding: 22px 26px 18px;
+  width: 500px; max-height: 80vh; overflow-y: auto;
+  position: relative;
+}
+.modal h2 {
+  color: var(--accent2); font-size: 1.05rem; margin-bottom: 16px;
+  padding-right: 28px;
+}
+.closeBtn {
+  position: absolute; top: 14px; right: 16px;
+  background: none; border: none; color: var(--muted);
+  font-size: 1.1rem; cursor: pointer; line-height: 1;
+}
+.closeBtn:hover { color: var(--text); }
+.version { margin-bottom: 18px; }
+.versionHeader { display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px; }
+.vnum { font-weight: bold; font-size: 0.95rem; color: var(--text); }
+.vnum.current { color: var(--accent2); }
+.badge { font-size: 0.6rem; background: var(--accent2); color: #000; padding: 1px 6px; border-radius: 3px; font-weight: bold; letter-spacing: 0.5px; }
+.date { font-size: 0.7rem; color: var(--muted); margin-left: auto; }
+.entries { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px; }
+.entries li { font-size: 0.78rem; color: var(--muted); padding: 3px 0; border-bottom: 1px solid rgba(255,255,255,0.04); display: flex; gap: 8px; }
+.tag { font-size: 0.6rem; font-weight: bold; padding: 1px 5px; border-radius: 3px; white-space: nowrap; align-self: flex-start; margin-top: 2px; flex-shrink: 0; }
+.tagNew  { background: #1b5e20; color: #a5d6a7; }
+.tagFix     { background: #1a237e; color: #90caf9; }
+.tagImprove { background: #1b5e20; color: #a5d6a7; }
+.tagTweak { background: #33691e; color: #dce775; }
+.tagEvent { background: #4a148c; color: #ce93d8; }

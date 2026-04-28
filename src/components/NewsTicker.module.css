@@ -1,0 +1,34 @@
+.newsTicker {
+  background: var(--panel);
+  border-top: 1px solid var(--border);
+  overflow: hidden;
+  height: 26px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+.newsLabel {
+  font-size: 0.7rem;
+  color: var(--accent);
+  padding: 0 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  border-right: 1px solid var(--border);
+}
+.newsContent {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+.newsText {
+  font-size: 0.72rem;
+  color: var(--muted);
+  white-space: nowrap;
+  display: inline-block;
+  padding-left: 100%;
+  animation: newsScroll 40s linear infinite;
+}
+@keyframes newsScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}

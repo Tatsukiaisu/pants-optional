@@ -1,0 +1,43 @@
+.header {
+  background: var(--panel);
+  border-bottom: 2px solid var(--accent);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+.header h1 { font-size: 1.3rem; color: var(--accent2); }
+
+.nav { display: flex; align-items: center; gap: 12px; }
+
+.stats { font-size: 0.82rem; color: var(--muted); text-align: right; }
+.stats span { color: var(--text); font-weight: bold; }
+
+.shareBtn {
+  background: none; border: 1px solid var(--muted); color: var(--muted);
+  padding: 4px 10px; border-radius: 6px; cursor: pointer; font-size: 0.78rem;
+  transition: border-color 0.2s, color 0.2s; flex-shrink: 0;
+}
+.shareBtn:hover { border-color: var(--accent2); color: var(--accent2); }
+
+.dexBtn {
+  background: none; border: 1px solid var(--muted); color: var(--muted);
+  padding: 4px 10px; border-radius: 6px; cursor: pointer; font-size: 0.78rem;
+  flex-shrink: 0; transition: border-color 0.2s, color 0.2s; position: relative;
+}
+.dexBtn:hover { border-color: var(--accent2); color: var(--accent2); }
+
+.versionBadge {
+  font-size: 0.6rem; font-weight: bold; letter-spacing: 0.5px;
+  background: var(--card); border: 1px solid var(--border); color: var(--muted);
+  padding: 2px 7px; border-radius: 4px; cursor: pointer; margin-left: 8px;
+  vertical-align: middle; transition: border-color 0.2s, color 0.2s;
+}
+.versionBadge:hover { border-color: var(--accent2); color: var(--accent2); }
+
+.badge {
+  position: absolute; top: -5px; right: -5px;
+  background: var(--accent); color: white; font-size: 0.55rem;
+  font-weight: bold; padding: 1px 4px; border-radius: 3px; pointer-events: none;
+}

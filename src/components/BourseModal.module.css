@@ -1,0 +1,95 @@
+.overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.75);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 100; backdrop-filter: blur(4px);
+}
+.modal {
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: 12px; padding: 20px 22px;
+  max-width: 860px; width: 96%; max-height: 93vh; overflow-y: auto;
+  position: relative;
+}
+.modal h2 { margin: 0; font-size: 1.2rem; color: var(--accent2); }
+.closeBtn {
+  background: none; border: none; color: var(--muted);
+  font-size: 1.1rem; cursor: pointer; padding: 2px 6px;
+  flex-shrink: 0; align-self: flex-start; margin-top: -2px;
+}
+.closeBtn:hover { color: var(--text); }
+.headerRow { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 14px; }
+.wallet { font-size: 0.82rem; text-align: right; color: var(--muted); }
+.portfolioValue { font-size: 0.82rem; text-align: right; color: var(--muted); }
+.stockList { display: flex; flex-direction: column; gap: 2px; margin-bottom: 16px; }
+.stockRow {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 12px; border-radius: 8px; cursor: pointer;
+  border: 1px solid transparent; transition: background .15s, border-color .15s;
+}
+.stockRow:hover, .stockRow.selected {
+  background: var(--card); border-color: var(--border);
+}
+.stockRow.selected { border-color: var(--accent2); }
+.stockName { font-size: 0.88rem; font-weight: 600; }
+.stockTicker { font-size: 0.73rem; color: var(--muted); }
+.stockPrice { font-size: 0.88rem; margin-left: auto; min-width: 80px; text-align: right; }
+.stockChange { font-size: 0.8rem; min-width: 68px; text-align: right; font-weight: 600; }
+.stockHeld { font-size: 0.8rem; min-width: 40px; text-align: center; color: var(--accent2); }
+.sparkline { display: block; width: 80px; height: 36px; flex-shrink: 0; opacity: 0.85; border-radius: 4px; }
+.up { color: var(--green); }
+.down { color: #ef5350; }
+.flat { color: var(--muted); }
+.detail {
+  border: 1px solid var(--border); border-radius: 10px;
+  padding: 14px; margin-bottom: 16px;
+}
+.detailTop {
+  display: flex; align-items: flex-start; gap: 16px; margin-bottom: 12px;
+}
+.detailName { font-size: 1rem; font-weight: 700; }
+.detailTicker { font-size: 0.73rem; color: var(--muted); }
+.detailPrice { font-size: 1.25rem; font-weight: 800; color: var(--accent2); margin-left: auto; }
+.detailStats { display: flex; gap: 14px; font-size: 0.73rem; color: var(--muted); }
+.detailStats span { color: var(--text); }
+.chart { width: 100%; height: 160px; border-radius: 6px; display: block; }
+.tradeRow {
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: 8px; margin-top: 12px;
+}
+.qtyInput {
+  width: 72px; padding: 6px 8px; border-radius: 6px;
+  border: 1px solid var(--border); background: var(--card); color: var(--text);
+  font-size: 0.88rem;
+}
+.quickBtn {
+  padding: 5px 10px; border-radius: 6px; border: 1px solid var(--border);
+  background: var(--card); color: var(--text); font-size: 0.78rem; cursor: pointer;
+}
+.quickBtn:hover { border-color: var(--accent2); }
+.tradeCost { margin-left: auto; font-size: 0.82rem; color: var(--muted); }
+.buyBtn, .sellBtn {
+  padding: 7px 18px; border-radius: 7px; border: none;
+  font-size: 0.85rem; font-weight: 700; cursor: pointer; transition: opacity .15s;
+}
+.buyBtn:disabled, .sellBtn:disabled { opacity: 0.4; cursor: not-allowed; }
+.buyBtn { background: var(--green); color: #000; }
+.sellBtn { background: #ef5350; color: #fff; }
+.portfolioSection { margin-top: 16px; border-top: 1px solid var(--border); padding-top: 14px; }
+.portfolioSection h3 { margin: 0 0 10px; font-size: 0.95rem; }
+.portfolioEmpty { color: var(--muted); font-size: 0.82rem; }
+.portfolioGrid { display: flex; flex-direction: column; gap: 4px; }
+.portfolioRow {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 10px; border-radius: 7px; background: var(--card);
+  font-size: 0.82rem;
+}
+.pfName { font-weight: 600; min-width: 140px; }
+.pfQty { min-width: 40px; text-align: center; color: var(--accent2); font-weight: 600; }
+.pfAvg { color: var(--muted); min-width: 80px; }
+.pfGain { font-weight: 600; margin-left: auto; }
+.pos { color: var(--green); }
+.neg { color: #ef5350; }
+.pfSellBtn {
+  padding: 4px 10px; border-radius: 5px; border: none;
+  background: #ef5350; color: #fff; font-size: 0.75rem; cursor: pointer;
+}
+.pfSellBtn:hover { opacity: 0.85; }

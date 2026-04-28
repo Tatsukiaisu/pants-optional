@@ -1,0 +1,75 @@
+.buildingsPanel {
+  width: 310px;
+  flex-shrink: 0;
+  background: var(--panel);
+  overflow-y: auto;
+  padding: 12px 14px;
+}
+.buildingsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.buildingsHeader h2 { font-size: 0.82rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+.bulkBtns { display: flex; gap: 4px; }
+.bulkBtn {
+  background: var(--card); border: 1px solid var(--border);
+  color: var(--muted); padding: 3px 8px; border-radius: 5px;
+  cursor: pointer; font-size: 0.72rem;
+  transition: border-color 0.2s, color 0.2s;
+}
+.bulkBtn.active { border-color: var(--accent2); color: var(--accent2); background: rgba(245,166,35,0.1); }
+.bulkBtn:hover { border-color: var(--muted); color: var(--text); }
+
+.buildingCard {
+  background: var(--card); border: 2px solid var(--border);
+  border-radius: 10px; padding: 9px 12px; margin-bottom: 8px;
+  cursor: pointer; display: flex; align-items: center; gap: 10px;
+  transition: border-color 0.2s, background 0.2s; position: relative;
+}
+.buildingCard.affordable { border-color: var(--accent); box-shadow: 0 0 10px rgba(233,69,96,0.2); }
+.buildingCard.affordable:hover { background: rgba(233,69,96,0.08); }
+.buildingCard.disabled { opacity: 0.4; cursor: not-allowed; }
+
+.bIcon { font-size: 1.8rem; flex-shrink: 0; }
+.bInfo { flex: 1; min-width: 0; }
+.bName { font-weight: bold; font-size: 0.9rem; }
+.bDesc { font-size: 0.68rem; color: var(--muted); margin-top: 1px; }
+.bCost { font-size: 0.76rem; color: var(--accent2); margin-top: 3px; }
+.bRate { font-size: 0.68rem; color: var(--green); }
+.bCount { font-size: 1.5rem; font-weight: bold; color: var(--accent2); min-width: 36px; text-align: right; flex-shrink: 0; }
+
+/* Upgrades */
+.upgradesPanel {
+  padding: 12px 16px;
+  border-bottom: 2px solid var(--border);
+  overflow-y: auto;
+  max-height: 240px;
+  flex-shrink: 0;
+}
+.upgradesPanel h2 { font-size: 0.82rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+.upgradesGrid { display: flex; flex-wrap: wrap; gap: 7px; }
+.upgEmpty { font-size: 0.75rem; color: var(--muted); padding: 4px 0; }
+
+.upgradeBtn {
+  background: var(--card); border: 2px solid var(--border);
+  border-radius: 8px; padding: 7px 10px; cursor: pointer;
+  color: var(--text); font-size: 0.78rem; text-align: left;
+  transition: border-color 0.2s, background 0.2s; width: 170px;
+  display: flex; flex-direction: column;
+}
+.upgIcon { font-size: 1.3rem; }
+.upgName { font-weight: bold; display: block; margin-top: 2px; }
+.upgDesc { color: var(--muted); font-size: 0.7rem; display: block; margin-top: 1px; }
+.upgCost { color: var(--accent2); font-size: 0.72rem; margin-top: 3px; display: block; }
+.upgradeBtn.affordable { border-color: var(--accent2); background: rgba(245,166,35,0.08); }
+.upgradeBtn.affordable:hover { background: rgba(245,166,35,0.18); }
+.upgradeBtn.locked { opacity: 0.45; cursor: not-allowed; filter: grayscale(40%); border-style: dashed; }
+.upgradeBtn.locked .upgCost { color: var(--muted); }
+
+/* Log */
+.logPanel { flex: 1; padding: 12px 16px; overflow-y: auto; display: flex; flex-direction: column; }
+.logPanel h2 { font-size: 0.82rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; flex-shrink: 0; }
+.logEntries { display: flex; flex-direction: column; gap: 3px; }
+.logEntry { font-size: 0.78rem; color: var(--muted); padding: 3px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
